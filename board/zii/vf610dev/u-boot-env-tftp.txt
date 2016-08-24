@@ -1,0 +1,3 @@
+serverip=10.0.0.254
+bootargs=console=ttyLP0,115200n8
+bootcmd=dhcp; tftp 0x81000000 uImage; tftp 0x82000000 vf610-zii-dev-rev-b.dtb; bootm 0x81000000 - 0x82000000

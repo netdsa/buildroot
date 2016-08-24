@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# Setting up DSA interfaces...
+#
+
+case "$1" in
+  start)
+    echo "Starting ZII network..."
+    ip link set up dev eth1
+    ;;
+  stop)
+    echo "Stopping ZII network..."
+    ;;
+  restart|reload)
+    "$0" stop
+    "$0" start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart}"
+    exit 1
+esac
+
+exit $?
+

@@ -1,0 +1,7 @@
+file drivers/net/dsa/mv88e6xxx/*.c +p
+func mv88e6xxx_read =_
+func mv88e6xxx_write =_
+
+file net/bridge/*.c +p
+
+file net/dsa/*.c +p
