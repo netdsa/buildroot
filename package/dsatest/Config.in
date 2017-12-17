@@ -1,0 +1,13 @@
+config BR2_PACKAGE_DSATEST
+	bool "dsatest"
+	depends on BR2_PACKAGE_PYTHON3
+	depends on BR2_INSTALL_LIBSTDCPP # Python-paramiko
+	depends on BR2_TOOLCHAIN_HEADERS_AT_LEAST_3_4 # iproute2
+	select BR2_PACKAGE_PYTHON_SETUPTOOLS
+	select BR2_PACKAGE_PYTHON_PARAMIKO
+	select BR2_PACKAGE_IPROUTE2
+	help
+	  A Linux network testing framework for hardware switching devices
+
+comment "dsatest depends on Python3"
+	depends on !BR2_PACKAGE_PYTHON3
