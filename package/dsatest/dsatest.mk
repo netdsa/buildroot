@@ -4,14 +4,10 @@
 #
 ###############################################################################
 
-DSATEST_VERSION = c160f3f8a6a147e466b8f082503198004003bf51
+DSATEST_VERSION = fdef24f0e384affcc747e9a1bdba3c3dec9f3fdc
 DSATEST_SITE = $(call github,netdsa,dsatest,$(DSATEST_VERSION))
 DSATEST_LICENSE = unknown
-DSATEST_DEPENDENCIES = python3 python-setuptools python-paramiko iproute2
+DSATEST_DEPENDENCIES = python-paramiko iproute2
+DSATEST_SETUP_TYPE = setuptools
 
-define DSATEST_INSTALL_TARGET_CMDS
-	mkdir -p $(TARGET_DIR)/root/dsatest
-	rsync -a $(@D)/ $(TARGET_DIR)/root/dsatest/
-endef
-
-$(eval $(generic-package))
+$(eval $(python-package))
