@@ -1,0 +1,16 @@
+# interface file
+
+auto lo
+iface lo inet loopback
+
+# interface to SSH in the Rpi
+auto eth0
+iface eth0 inet dhcp
+  pre-up /etc/network/nfs_check
+  wait-delay 15
+
+# interface to connect to zii
+auto eth1
+iface eth1 inet static
+        address 10.0.0.1
+        netmask 255.0.0.0
